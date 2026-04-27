@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nini Food - Cardápio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <style>
+        /* Adicionando o scroll suave direto aqui para garantir que funcione */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Ajuste para a seção não ficar escondida atrás do topo ao rolar */
+        .itens {
+            scroll-margin-top: 150px;
+        }
+        /* Tirar o sublinhado dos links do swiper */
+        .lista_itens a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container_primario">
+        <div class="imagem-logo">
+            <img src="imagens/logo.png" alt="Imagem do logo">
+        </div>
+
+        <a href="perfil.html"><i class="bi bi-list menu-hamburguer" id="menu-hamburguer"></i> </a>
+    </div>
+
+   <div class="status" style="text-align: center; margin: 20px 0;">
+    <i class="bi bi-clock"></i> 
+    <span>Status: </span>
+    <strong id="texto-status-loja" style="text-transform: uppercase;">Verificando...</strong>
+</div>
+
+    
+
+    <main id="home">
+    <section class="container-inicial">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide lista_itens">
+                    <a href="#categoria-pizza">
+                        <img src="imagens/pizza.jpg" alt="Pizza">
+                        <p>Pizza</p>
+                    </a>
+                </div>
+
+                <div class="swiper-slide lista_itens">
+                    <a href="#categoria-hamburguer">
+                        <img src="imagens/hamburguer.jpg" alt="Hambúrguer">
+                        <p>Hambúrguer</p>
+                    </a>
+                </div>
+
+                <div class="swiper-slide lista_itens">
+                    <a href="#categoria-pastel">
+                        <img src="imagens/pastel.jpg" alt="Pastel">
+                        <p>Pastel</p>
+                    </a>
+                </div>
+
+                <div class="swiper-slide lista_itens">
+                    <a href="#categoria-hotdog">
+                        <img src="imagens/hot-dog.jpg" alt="Cachorro-quente">
+                        <p>Cachorro-quente</p>
+                    </a>
+                </div>
+
+                <div class="swiper-slide lista_itens">
+                    <a href="#categoria-batata">
+                        <img src="imagens/batata frita.jpg" alt="Batata frita">
+                        <p>Batata frita</p>
+                    </a>
+                </div>
+
+                <div class="swiper-slide lista_itens">
+                    <a href="#categoria-bebidas">
+                        <img src="imagens/bebidas.jpg" alt="Bebidas">
+                        <p>Bebidas</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="itens_section">
+        <div class="itens" id="categoria-pizza">
+            <h2>Pizza</h2>
+            <div class="itens_clicar">
+                <p>Calabresa</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_calabresa"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Mussarela</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_mussarela"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>4 queijos</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_4_queijos"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Carne de sol</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_carne_de_sol"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Frango com catupiry</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_frango_com_catupiry"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Peito de peru</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_peito_de_peru"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Chocolate</p>
+                <button onclick="adicionarItem(this)" data-nome="Pizza_chocolate"><i class="bi bi-plus-lg"></i></button>
+            </div>
+        </div>
+
+        <div class="itens" id="categoria-hamburguer">
+            <h2>Hambúrguer</h2>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>X-tudo</p>
+                    <p class="item-estilizado">Pão bola, salsicha, carne de hambúrguer, calabresa, ovo, bacon, queijo, presunto e salada</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="X_tudo"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>X-calabresa</p>
+                    <p class="item-estilizado">Pão bola, carne de hamburguer, calabresa, queijo, presunto e salada</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="X_calabresa"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>X-egg</p>
+                    <p class="item-estilizado">Pão bola, carne de hambúrguer, ovo, queijo, presunto e salada</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="X_egg"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>X-frango</p>
+                    <p class="item-estilizado">Pão bola, carne de hambúrguer, frango, queijo, presunto, salada</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="X_frango"><i class="bi bi-plus-lg"></i></button>
+            </div>
+        </div>
+
+        <div class="itens" id="categoria-pastel">
+            <h2>Pastel</h2>
+            <div class="itens_clicar">
+                <p>Pastel de frango</p>
+                <button onclick="adicionarItem(this)" data-nome="Pastel_de_frango"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Pastel de queijo</p>
+                <button onclick="adicionarItem(this)" data-nome="Pastel_de_queijo"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Pastel misto</p>
+                <button onclick="adicionarItem(this)" data-nome="Pastel_misto"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Pastel de chocolate</p>
+                <button onclick="adicionarItem(this)" data-nome="Pastel_de_chocolate"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Pastel de doce de leite</p>
+                <button onclick="adicionarItem(this)" data-nome="Pastel_doce_de_leite"><i class="bi bi-plus-lg"></i></button>
+            </div>
+        </div>
+
+        <div class="itens" id="categoria-hotdog">
+            <h2>Cachorro-quente</h2>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>Carne</p>
+                    <p class="item-estilizado">Pão, salsicha, carne moída, verdura, ovo de codorna, batata palha</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="Cachorro_quente_carne"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>Frango</p>
+                    <p class="item-estilizado">Pão, salsicha, frango, verdura, ovo de codorna, batata palha</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="Cachorro_quente_frango"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <div class="estilizar-itens">
+                    <p>Carioca</p>
+                    <p class="item-estilizado">Pão, salsicha, ovo de codorna</p>
+                </div>
+                <button onclick="adicionarItem(this)" data-nome="Cachorro_quente_carioca"><i class="bi bi-plus-lg"></i></button>
+            </div>
+        </div>
+
+        <div class="itens" id="categoria-batata">
+            <h2>Batata frita</h2>
+            <div class="itens_clicar">
+                <p>Pequena</p>
+                <button onclick="adicionarItem(this)" data-nome="Batata_frita_pequena"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Média</p>
+                <button onclick="adicionarItem(this)" data-nome="Batata_frita_media"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Grande</p>
+                <button onclick="adicionarItem(this)" data-nome="Batata_frita_grande"><i class="bi bi-plus-lg"></i></button>
+            </div>
+        </div>
+
+        <div class="itens" id="categoria-bebidas">
+            <h2>Bebidas</h2>
+            <div class="itens_clicar">
+                <p>Coca cola</p>
+                <button onclick="adicionarItem(this)" data-nome="Coca_cola"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Fanta</p>
+                <button onclick="adicionarItem(this)" data-nome="Fanta"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Pepsi</p>
+                <button onclick="adicionarItem(this)" data-nome="Pepsi"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Sprite</p>
+                <button onclick="adicionarItem(this)" data-nome="Sprite"><i class="bi bi-plus-lg"></i></button>
+            </div>
+            <div class="itens_clicar">
+                <p>Guaraná</p>
+                <button onclick="adicionarItem(this)" data-nome="Guarana"><i class="bi bi-plus-lg"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="carrinho"></div>
+
+    <div class="menu-fixo">
+        <a href="cardapio.html" class="menu-fixo-itens">
+            <i class="bi bi-house-door"></i>
+            <p>Início</p>
+        </a>
+        <a href="pesquisa.html" class="menu-fixo-itens">
+            <i class="bi bi-search"></i>
+            <p>Pesquisar</p>
+        </a>
+        <a href="pedidos.html" class="menu-fixo-itens" id="btn-pedidos">
+            <i class="bi bi-bag"></i>
+            <p>Pedidos</p>
+        </a>
+        <a href="perfil.html" class="menu-fixo-itens">
+            <i class="bi bi-person"></i>
+            <p>Perfil</p>
+        </a>
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>

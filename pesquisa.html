@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nini Food - Pesquisar</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .campo-pesquisa {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            background: #06054c;
+            gap: 10px;
+        }
+        .campo-pesquisa input {
+            flex: 1;
+            padding: 12px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+        .campo-pesquisa a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        #resultados-pesquisa {
+            padding: 20px;
+        }
+        /* Reutilizando suas classes de estilo para manter o padrão */
+        .resultado-item {
+            border-bottom: 1px solid #eee;
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .resultado-item p {
+            margin: 0;
+            font-weight: bold;
+            color: #333;
+        }
+        .resultado-item .descricao {
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="campo-pesquisa">
+        <a href="cardapio.html"><i class="bi bi-arrow-left"></i></a>
+        <input type="text" id="input-busca" placeholder="O que você quer comer?" autofocus>
+    </div>
+
+    <main id="resultados-pesquisa">
+        <p style="text-align: center; color: #999; margin-top: 50px;">
+            Digite o nome de um prato (ex: Pizza, X-tudo...)
+        </p>
+    </main>
+
+    <div class="menu-fixo">
+        <a href="index.html" class="menu-fixo-itens">
+            <i class="bi bi-house-door"></i>
+            <p>Início</p>
+        </a>
+        <a href="pesquisa.html" class="menu-fixo-itens" style="color: #e21b1b;">
+            <i class="bi bi-search"></i>
+            <p>Pesquisar</p>
+        </a>
+        <a href="pedidos.html" class="menu-fixo-itens">
+            <i class="bi bi-bag"></i>
+            <p>Pedidos</p>
+        </a>
+        <a href="perfil.html" class="menu-fixo-itens">
+            <i class="bi bi-person"></i>
+            <p>Perfil</p>
+        </a>
+    </div>
+
+    <script src="pesquisa.js"></script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+ }
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+.imagem-logo img {
+    max-width: 150px;
+}
+
+.container_primario {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(6, 5, 76);
+    border-radius: 0 0 35px 35px;
+}
+
+.container_itens-menu {
+    position: absolute;
+    top: 60px; /* ajuste conforme seu header */
+    right: 0;
+    width: 200px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+/* Estado ativo (menu aberto) */
+.container_itens-menu.ativo {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Estilo da lista */
+#menu-principal {
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+}
+
+#menu-principal li {
+    padding: 10px;
+}
+
+#menu-principal li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+/* Ícone clicável */
+.menu-hamburguer {
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.container_primario i {
+    color: white;
+    font-size: 30px;
+}
+
+.status {
+    text-align: center;
+    border: 1px solid rgb(199, 198, 198);
+    border-radius: 14px;
+    padding: 0.5em;
+    width: 70%;
+    margin: 0.6em auto;
+}
+
+.pesquisa {
+    text-align: left;
+    border: 1px solid rgb(181, 181, 181);
+    padding: 0.5em;
+    margin: 0.3em 2em;
+    border-radius: 15px;
+}
+
+.pesquisa input {
+    border: none;
+}
+
+
+
+/*
+FIM DA PRIMEIRA PARTE
+*/
+
+.swiper {
+    padding: 10px;
+    margin: 0.5em;
+}
+
+.container-inicial {
+    background-color: rgb(245, 243, 243);
+    padding: 0.2em;
+    margin-top: 0.9em;
+}
+
+.lista_itens {
+    text-align: center;
+    /* Adicione esta linha abaixo */
+    width: 130px !important; 
+}
+
+.lista_itens img {
+    width: 130px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 7px;
+    /* Garante que a imagem não tenha margens extras */
+    display: block; 
+    margin: 0 auto;
+}
+
+/* FIM DO SWIPPER*/
+
+h2 {
+    padding: 2em 0em 1.5em 1em;
+    font-weight: 600;
+}
+
+/* Efeito iFood: Escurece e impede pedidos quando fechado */
+.cardapio-fechado {
+    filter: grayscale(100%);     /* Deixa tudo preto e branco */
+    opacity: 0.5;                /* Deixa meio transparente */
+    pointer-events: none;        /* IMPEDE CLIQUES (Ninguém consegue adicionar ao carrinho) */
+    user-select: none;           /* Impede selecionar textos */
+    transition: 0.5s;            /* Suaviza a transição se o horário mudar */
+}
+
+.status {
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+}
+
+#mensagem-cadastro {
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    min-height: 20px; /* Evita que o layout suba e desça quando a msg aparece */
+}
+
+.itens_clicar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0em 2em;
+    margin: 0em 0em 3em 0;
+}
+
+/* Estilizando o botão de adicionar no cardápio */
+.itens_clicar button {
+    background-color: white; /* Azul escuro igual ao seu tema */
+    color: #06054c;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px; /* Pode usar 50% se quiser ele bem redondo */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s active;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Efeito ao passar o mouse */
+.itens_clicar button:hover {
+    background-color: #14145e;
+    transform: scale(1.05);
+    color: white;
+}
+
+/* Efeito ao clicar */
+.itens_clicar button:active {
+    transform: scale(0.95);
+}
+
+/* Garante que o ícone do Bootstrap fique no tamanho certo */
+.itens_clicar button i {
+    font-size: 1.1rem;
+    -webkit-text-stroke: 0.5px; /* Deixa o ícone um pouco mais grosso se preferir */
+}
+
+.itens_section {
+    padding-bottom: 2em;
+}
+
+.estilizar-itens {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+}
+
+.item-estilizado {
+    font-size: 14px;
+    color: gray;
+    margin: 0.3em 0 0 0;
+}
+
+/*  FIM DO CONTAINER PRINCIPAL */
+
+footer {
+    background-color: rgb(6, 5, 76);
+    text-align: center;
+    padding: 1em;
+    color: white;
+    border-radius: 2px;
+}
+
+
+/*  MENU FIXO */
+
+.menu-fixo {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+
+    background-color: white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    padding: 10px 0;
+
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+
+    z-index: 1000; /* 🔥 GARANTE que fica por cima de tudo */
+}
+
+.menu-fixo-itens {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    text-decoration: none;
+    font-size: 13px; /* opcional, deixa mais parecido com app */
+    color: inherit;
+}
+
+#ver-sacola {
+  position: fixed;
+  bottom: 70px; /* fica acima do menu */
+  left: 65%;
+  width: 190px;
+  transform: translateX(-50%);
+
+  background-color: rgb(226, 32, 32);
+  color: white;
+
+  padding: 12px 20px;
+  border-radius: 7px;
+
+  display: none; /* começa escondido */
+
+  align-items: center;
+  gap: 10px;
+}
+
+#aba-pedidos {
+  display: none;
+}
+
+/* PÁGINA DO LOGIN */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.container-login {
+    background: linear-gradient(
+        135deg,
+        #110f91,
+        #1f245d,
+        #0c103e,
+        #0a0a8f
+    );
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-login::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255,255,255,0.1);
+    filter: blur(100px);
+    top: 10%;
+    left: 20%;
+}
+
+.container-login::after {
+    content: "";
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: rgba(0,0,0,0.2);
+    filter: blur(120px);
+    bottom: 10%;
+    right: 15%;
+}
+
+.login-principal {
+    background: #f8f9fc;
+    padding: 1.5em 2em 2em 2em; /* Reduzi o padding superior */
+    width: 90%;
+    max-width: 350px;
+    border-radius: 16px;
+    box-shadow: 
+        0 10px 25px rgba(0,0,0,0.2),
+        0 5px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 0.2em; 
+}
+
+.img-login {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -10px; 
+}
+
+.img-login img {
+    max-width: 180px; 
+    height: auto;
+    display: block;
+}
+
+.login-principal h2 {
+    color: #06054c;
+    font-size: 1.6em;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.info-login {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8em;
+    margin-top: 1em;
+}
+
+.info-login input {
+    width: 100%;
+    padding: 0.85em;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    outline: none;
+    transition: 0.2s;
+}
+
+.info-login input:focus {
+    border-color: #06054c;
+    box-shadow: 0 0 5px rgba(6,5,76,0.3);
+}
+
+.botao-login {
+    width: 100%;
+}
+
+.botao-login button {
+    width: 100%;
+    padding: 0.9em;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #1a2eff, #0a0a8f);
+    color: white;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 0.8em;
+    transition: 0.2s;
+}
+
+.botao-login button:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+.cadastro-info {
+    margin-top: 1em;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.cadastro-info a {
+    color: #06054c;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 5px;
+}
+
+.cadastro-info a:hover {
+    text-decoration: underline;
+}
+
+/*  DADOS DA CONTA */
+
+.hidden {
+  display: none;
+}
+
+#titulo-edicao {
+    font-size: 25px;
+}
+
+#tela-edicao {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 20px;
+  margin-top: 2em;
+}
+
+.item-dados {
+    padding: 1em;
+    border: 1px solid rgb(230, 230, 230);
+    border-radius: 5px;
+    margin: 0.7em;
+}
+
+.botoes-dados {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 1em 0;
+}
+
+.botao-dados-salvar button {
+    background-color: #0a0a8f;
+    padding: 0.7em 2em;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.botao-dados-cancelar button {
+    background-color: rgb(183, 30, 30);
+    padding: 0.7em 2em;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+
+}
+
+.input-editar-dados {
+    padding: 0.9em 0.5em;
+    border-radius: 5px;
+    border: 1px solid rgb(204, 204, 204);
+    width: 100%;
+    margin: 1em 0;
+}
+
+#aba-pedidos {
+  display: none;
+}
+
+#carrinho {
+    display: none; /* Começa escondido */
+    position: fixed;
+    bottom: 70px; /* Ajuste essa altura para ficar exatamente ACIMA do seu menu fixo */
+    left: 45%;
+    width: 50%;
+    background-color: #e21b1b; /* Vermelho estilo iFood, ou a cor do seu tema */
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px -2px 10px rgba(0,0,0,0.2);
+    z-index: 999; /* Garante que fique na frente de tudo, menos do menu fixo se necessário */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.botao-adicionar-pesquisa {
+    background-color: #06054c;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+    <h2>Gerenciar os dados da conta</h2>
+    <div class="container-dados">
+
+        <div class="item-dados" onclick="abrirEdicao('email')">Endereço de e-mail</div>
+        <div class="item-dados" onclick="abrirEdicao('senha')">Senha</div>
+        <div class="item-dados" onclick="abrirEdicao('nome')">Nome</div>
+
+    </div>
+
+    <div style="padding: 20px;">
+        <button onclick="sairDaConta()" style="width: 100%; padding: 12px; background: none; border: 1px solid #e21b1b; color: #e21b1b; border-radius: 8px; font-weight: bold; cursor: pointer;">
+            <i class="bi bi-box-arrow-right"></i> Sair da conta
+        </button>
+    </div>
+
+        <!-- TELA DE EDIÇÃO -->
+        <div id="tela-edicao" class="hidden">
+        <h3 id="titulo-edicao"></h3>
+
+        <input class="input-editar-dados" type="text" id="input-edicao">
+
+        <div class="botoes-dados">
+            <div class="botao-dados-salvar"><button onclick="salvar()">Salvar</button></div>
+            <div class="botao-dados-cancelar"><button onclick="fechar()">Cancelar</button></div>
+        </div>
+    </div>
+
+    <script src="perfil.js"></script>
+</body>
+
+</body>
+</html>
