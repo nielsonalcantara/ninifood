@@ -9,7 +9,7 @@ botaoEntrar.addEventListener("click", async () => {
     }
 
     try {
-        const resposta = await fetch("http://localhost:3000/login", {
+        const resposta = await fetch("https://ninifood.onrender.com/login", {
             method: "POST",
             headers:{
                 "Content-type": "application/json"

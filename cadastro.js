@@ -17,7 +17,7 @@ cadastrarLogin.addEventListener("click", function () {
         return
     }
 
-    fetch("http://localhost:3000/registro", {
+    fetch("https://ninifood.onrender.com/registro", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
