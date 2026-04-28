@@ -135,6 +135,25 @@ function removerUmItem(index) {
     mostrarPedidos();
 }
 
+// Função para limpar todos os itens da sacola de uma vez
+function esvaziarSacola() {
+    // 1. Confirmação simples para o usuário não apagar sem querer
+    if (confirm("Tem certeza que deseja esvaziar sua sacola?")) {
+        
+        // 2. Limpa o array na memória do script
+        sacolaPedidos = [];
+        
+        // 3. Remove os dados do armazenamento local do navegador
+        localStorage.removeItem('carrinho_projeto');
+        
+        // 4. Atualiza a interface (vai mostrar a mensagem de sacola vazia)
+        mostrarPedidos();
+        
+        console.log("Sacola esvaziada com sucesso!");
+    }
+}
+
+
 function mostrarTelaStatus() {
     const header = document.querySelector('header');
     if (header) header.style.display = "none";
